@@ -37,13 +37,6 @@ function ContactPage() {
             <p>utskriftslabbet@gmail.com</p>
           </div>
           
-          
-          <div>
-            <h4>Filuppladdning</h4>
-            <p>För stora filer eller detaljerade offerter, maila dina 3D-modeller direkt till:</p>
-            <p><strong>utskriftslabbet@gmail.com</strong></p>
-            <p>Godkända format: .STL, .OBJ, .3MF, .STEP, .STP, .AMF</p>
-          </div>
         </div>
       </section>
 

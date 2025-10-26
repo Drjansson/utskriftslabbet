@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import ContactPage from './pages/ContactPage';
-import InformationPage from './pages/InformationPage';
 import ExamplesPage from './pages/ExamplesPage';
 import HomePage from './pages/HomePage';
 
@@ -85,7 +84,6 @@ function Header({ currentPath, navigate }) {
 
   const navItems = [
     { path: '/', label: 'Hem' },
-    { path: '/information', label: 'Information' },
     { path: '/examples', label: 'Exempel' },
     { path: '/contact', label: 'Kontakt' }
   ];
@@ -169,7 +167,6 @@ function AppContent({ currentPath, navigate }) {
       <Header currentPath={currentPath} navigate={navigate} />
       <main className="main">
         <Route path="/" element={<HomePage />} currentPath={currentPath} />
-        <Route path="/information" element={<InformationPage />} currentPath={currentPath} />
         <Route path="/examples" element={<ExamplesPage />} currentPath={currentPath} />
         <Route path="/contact" element={<ContactPage />} currentPath={currentPath} />
       </main>

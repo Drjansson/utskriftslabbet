@@ -39,11 +39,11 @@ function ExamplesPage() {
 
       <section className="hero">
         <h1>Exempel på 3D-modeller</h1>
-        <p>Utforska riktiga 3D-modeller med vår professionella STL-visare (react-stl-viewer). Interagera med utskriftsfärdiga filer och få pris direkt.</p>
+        <p></p>
       </section>
 
       <section>
-        <h2 style={{marginBottom: '24px'}}>Fler exempel</h2>
+        <h2 style={{display: 'none', marginBottom: '24px'}}>Fler exempel</h2>
         {/* Två rader, två boxar per rad */}
         <div className="grid grid-2" style={{marginBottom: '32px'}}>
           {exampleBoxes.map((ex, i) => (
@@ -124,17 +124,17 @@ function ExamplesPage() {
 
       <section className="card" style={{marginTop: '48px'}}>
         <h2>Redo att starta ditt projekt?</h2>
-        <p>Ladda upp dina STL-filer och få pris direkt med vår professionella visare. Vi stödjer alla större 3D-filformat och ger prisuppskattning i realtid.</p>
+        <p>Ladda upp dina 3D-modeller. Vi stödjer alla större 3D-filformat.</p>
         <div style={{display: 'flex', gap: 'var(--space-16)', marginTop: '16px', flexWrap: 'wrap'}}>
-          <Link to="/contact" className="btn btn--primary">Få offert</Link>
-          <Link to="/information" className="btn btn--outline">Läs mer</Link>
+          <Link to="/contact" className="btn btn--primary">Kontakta oss</Link>
+          <Link to="/" className="btn btn--outline">Läs mer</Link>
         </div>
       </section>
 
       <section className="card" style={{marginTop: '32px'}}>
-        <h2>Fler exempel från Maker World</h2>
-        <p>Här är andra exempel som vi kan skriva ut:</p>
-        <a href="https://www.makerworld.com/" target="_blank" rel="noopener noreferrer" className="btn btn--outline">Besök Maker World</a>
+        <h2>Har du ingen egen 3D-modell?</h2>
+        <p>På makerworld.com hittar du massor av 3D-modeller som vi kan skriva ut:</p>
+        <a href="https://www.makerworld.com/" target="_blank" rel="noopener noreferrer" className="btn btn--primary">Besök Maker World</a>
       </section>
     </div>
   );

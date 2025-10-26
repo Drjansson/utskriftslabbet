@@ -107,7 +107,7 @@ function STLUploadForm({ filename }) {
   return (
     <div>
       <h3 style={{display: 'flex', alignItems: 'center', gap: 'var(--space-8)'}}>
-        <span>🔧🤖</span> Kontakta oss om 3D-modell
+        Kontakta oss på UtskriftsLabbet!
       </h3>
 
     <form onSubmit={handleSubmit}>
@@ -123,7 +123,7 @@ function STLUploadForm({ filename }) {
       </label>
 
       <div className="form-group">
-        <label className="form-label" htmlFor="name">✏️ Namn *</label>
+        <label className="form-label" htmlFor="name">Namn *</label>
         <input
           type="text"
           id="name"
@@ -136,7 +136,7 @@ function STLUploadForm({ filename }) {
       </div>
 
       <div className="form-group">
-        <label className="form-label" htmlFor="email">📧 E-post *</label>
+        <label className="form-label" htmlFor="email">E-post *</label>
         <input
         type="email"
         id="email"
@@ -149,7 +149,7 @@ function STLUploadForm({ filename }) {
       </div>
 
       <div className="form-group">
-        <label className="form-label" htmlFor="message">💬 Meddelande / Beskrivning</label>
+        <label className="form-label" htmlFor="message">Meddelande / Beskrivning</label>
         <textarea
             id="message"
             name="message"
@@ -161,7 +161,7 @@ function STLUploadForm({ filename }) {
     </div>
 
       <div className="form-group">
-        <label className="form-label" htmlFor="material">🧱 Material</label>
+        <label className="form-label" htmlFor="material">Material</label>
         <select 
           id="material"
           className="form-control"
@@ -169,14 +169,13 @@ function STLUploadForm({ filename }) {
           onChange={(e) => setMaterial(e.target.value)}
         >
           <option value="PLA">PLA</option>
-          <option value="ABS">ABS</option>
           <option value="PETG">PETG</option>
-          <option value="Resin">Resin</option>
+          <option value="TPU">TPU</option>
         </select>
       </div>
 
       <div className="form-group">
-        <label className="form-label" htmlFor="color">🎨 Färg</label>
+        <label className="form-label" htmlFor="color">Färg</label>
         <select 
           id="color"
           className="form-control"
@@ -189,28 +188,44 @@ function STLUploadForm({ filename }) {
           <option value="Blue">Blå</option>
           <option value="Green">Grön</option>
           <option value="Yellow">Gul</option>
+          <option value="Transparent">Transparent</option>
         </select>
       </div>
 
 
       {exampleFilename ? (
         <div className="form-group">
-          <label className="form-label">📄 STL-fil</label>
-          <div className="form-control" style={{ background: '#f5f5f5', color: '#333', cursor: 'not-allowed' }}>
-            Fil vald: <strong>{exampleFilename}</strong>
+          <label className="form-label">3D-model:</label>
+          <div className="form-control" style={{ display: 'flex', alignItems: 'center', background: '#f5f5f5', color: '#333', cursor: 'not-allowed', justifyContent: 'space-between' }}>
+            <span>
+              Fil vald: <strong>{exampleFilename}</strong>
+            </span>
+            <button
+              type="button"
+              style={{ marginLeft: '16px', background: '#eee', border: '1px solid #ccc', borderRadius: '4px', padding: '4px 10px', cursor: 'pointer' }}
+              onClick={() => {
+                setExampleFile(null);
+                setFileBase64('');
+                if (fileInputRef.current) fileInputRef.current.value = '';
+              }}
+              aria-label="Rensa vald fil"
+            >
+              Rensa
+            </button>
           </div>
         </div>
       ) : (
         <div className="form-group">
-          <label className="form-label" htmlFor="stlFile">📄 STL-fil</label>
+          <label className="form-label" htmlFor="stlFile">3D-model:</label>
           <input 
             ref={fileInputRef}
             id="stlFile"
             className="form-control"
             type="file" 
-            accept=".stl"
+            accept=".stl,.obj,.3mf,.step,.stp,.svg,.amf"
             onChange={handleFileChange}
             disabled={!!exampleFilename}
+            
           />
         </div>
       )}
@@ -228,7 +243,7 @@ function STLUploadForm({ filename }) {
         </div>
       )}
 
-  <button type="submit" disabled={!fileBase64 && !exampleFilename}>📨 Skicka</button>
+  <button type="submit" disabled={!fileBase64 && !exampleFilename}>Skicka</button>
     </form>
     </div>
 
