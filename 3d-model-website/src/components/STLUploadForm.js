@@ -105,9 +105,9 @@ function STLUploadForm({ filename }) {
   };
 
   return (
-    <div className="card" style={{height: 'fit-content', position: 'sticky', top: '20px'}}>
+    <div>
       <h3 style={{display: 'flex', alignItems: 'center', gap: 'var(--space-8)'}}>
-        <span>🔧</span> Kontakta oss om 3D-modell
+        <span>🔧🤖</span> Kontakta oss om 3D-modell
       </h3>
 
     <form onSubmit={handleSubmit}>
@@ -123,7 +123,7 @@ function STLUploadForm({ filename }) {
       </label>
 
       <div className="form-group">
-        <label className="form-label" htmlFor="name">🏷️ Namn *</label>
+        <label className="form-label" htmlFor="name">✏️ Namn *</label>
         <input
           type="text"
           id="name"
@@ -136,7 +136,7 @@ function STLUploadForm({ filename }) {
       </div>
 
       <div className="form-group">
-        <label className="form-label" htmlFor="email">E-post *</label>
+        <label className="form-label" htmlFor="email">📧 E-post *</label>
         <input
         type="email"
         id="email"
@@ -149,7 +149,7 @@ function STLUploadForm({ filename }) {
       </div>
 
       <div className="form-group">
-        <label className="form-label" htmlFor="message">Meddelande / Beskrivning</label>
+        <label className="form-label" htmlFor="message">💬 Meddelande / Beskrivning</label>
         <textarea
             id="message"
             name="message"
@@ -161,7 +161,7 @@ function STLUploadForm({ filename }) {
     </div>
 
       <div className="form-group">
-        <label className="form-label" htmlFor="material">🧡 Material</label>
+        <label className="form-label" htmlFor="material">🧱 Material</label>
         <select 
           id="material"
           className="form-control"
@@ -176,7 +176,7 @@ function STLUploadForm({ filename }) {
       </div>
 
       <div className="form-group">
-        <label className="form-label" htmlFor="color">🧡 Färg</label>
+        <label className="form-label" htmlFor="color">🎨 Färg</label>
         <select 
           id="color"
           className="form-control"
@@ -195,14 +195,14 @@ function STLUploadForm({ filename }) {
 
       {exampleFilename ? (
         <div className="form-group">
-          <label className="form-label">STL-fil</label>
+          <label className="form-label">📄 STL-fil</label>
           <div className="form-control" style={{ background: '#f5f5f5', color: '#333', cursor: 'not-allowed' }}>
             Fil vald: <strong>{exampleFilename}</strong>
           </div>
         </div>
       ) : (
         <div className="form-group">
-          <label className="form-label" htmlFor="stlFile">STL-fil</label>
+          <label className="form-label" htmlFor="stlFile">📄 STL-fil</label>
           <input 
             ref={fileInputRef}
             id="stlFile"
@@ -228,7 +228,7 @@ function STLUploadForm({ filename }) {
         </div>
       )}
 
-  <button type="submit" disabled={!fileBase64 && !exampleFilename}>Skicka</button>
+  <button type="submit" disabled={!fileBase64 && !exampleFilename}>📨 Skicka</button>
     </form>
     </div>
 

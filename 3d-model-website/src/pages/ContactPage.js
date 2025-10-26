@@ -14,7 +14,9 @@ function ContactPage() {
       </section>
 
       <section className="grid grid-2">
-        <STLUploadForm filename={filename} />
+        <div className="card" style={{height: 'fit-content', position: 'sticky', top: '20px'}}>
+          <STLUploadForm filename={filename} />
+        </div>
 
         <div className="card">
           <h3>Kontaktinformation</h3>
@@ -25,7 +27,7 @@ function ContactPage() {
             </p>
           </div>
           
-          <div style={{marginBottom: '24px'}}>
+          <div style={{marginBottom: '24px', display: 'none'}}>
             <h4>Telefon</h4>
             <p>(555) 123-4567</p>
           </div>
@@ -35,14 +37,6 @@ function ContactPage() {
             <p>utskriftslabbet@gmail.com</p>
           </div>
           
-          <div style={{marginBottom: '24px'}}>
-            <h4>Öppettider</h4>
-            <p>
-              Måndag - Fredag: 09:00 - 18:00<br />
-              Lördag: 10:00 - 16:00<br />
-              Söndag: Stängt
-            </p>
-          </div>
           
           <div>
             <h4>Filuppladdning</h4>
