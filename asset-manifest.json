@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/utskriftslabbet/static/css/main.afb0942c.css",
+    "main.js": "/utskriftslabbet/static/js/main.95ba3bec.js",
+    "index.html": "/utskriftslabbet/index.html",
+    "main.afb0942c.css.map": "/utskriftslabbet/static/css/main.afb0942c.css.map",
+    "main.95ba3bec.js.map": "/utskriftslabbet/static/js/main.95ba3bec.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.afb0942c.css",
+    "static/js/main.95ba3bec.js"
+  ]
+}
