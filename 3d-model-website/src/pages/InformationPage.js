@@ -1,82 +1,82 @@
-// Information page component
+// Informationssida komponent
 function InformationPage() {
   return (
     <div>
       <section className="hero">
-        <h1>Our 3D Printing Services</h1>
-        <p>Learn about our capabilities, materials, and processes.</p>
+        <h1>Vår 3D‑utskriftstjänst</h1>
+        <p>Läs om våra möjligheter, material och arbetsflöden.</p>
       </section>
 
       <section className="grid grid-2">
         <div className="card">
-          <h3>Technologies We Use</h3>
+          <h3>Tekniker vi använder</h3>
           <ul style={{marginTop: '16px', paddingLeft: '20px'}}>
-            <li><strong>FDM (Fused Deposition Modeling)</strong> - For durable, functional prototypes</li>
-            <li><strong>SLA (Stereolithography)</strong> - For high-detail miniatures and jewelry</li>
-            <li><strong>SLS (Selective Laser Sintering)</strong> - For complex geometries and production parts</li>
-            <li><strong>Multi Jet Fusion</strong> - For batch production and functional prototypes</li>
+            <li><strong>FDM (Fused Deposition Modeling)</strong> – För hållbara, funktionella prototyper</li>
+            <li><strong>SLA (Stereolithography)</strong> – För höga detaljnivåer, t.ex. miniatyrer och smycken</li>
+            <li><strong>SLS (Selective Laser Sintering)</strong> – För komplexa geometrier och produktionsdelar</li>
+            <li><strong>Multi Jet Fusion</strong> – För batchproduktion och funktionella prototyper</li>
           </ul>
         </div>
 
         <div className="card">
-          <h3>Available Materials</h3>
+          <h3>Tillgängliga material</h3>
           <ul style={{marginTop: '16px', paddingLeft: '20px'}}>
-            <li><strong>PLA</strong> - Biodegradable, easy to print, great for prototypes</li>
-            <li><strong>PETG</strong> - Chemical resistant, food-safe options available</li>
-            <li><strong>TPU</strong> - Flexible, rubber-like properties</li>
-            <li><strong>PVA</strong> - Water-soluble, ideal for support structures in dual-extrusion prints</li>
+            <li><strong>PLA</strong> – Biologiskt nedbrytbart, lätt att skriva ut, utmärkt för prototyper</li>
+            <li><strong>PETG</strong> – Kemikalieresistent, finns i livsmedelssäkra varianter</li>
+            <li><strong>TPU</strong> – Flexibelt, gummiliknande egenskaper</li>
+            <li><strong>PVA</strong> – Vattenlösligt, idealiskt som stödmaterial vid dubbel-extrusion</li>
           </ul>
         </div>
       </section>
 
       <section className="card">
-        <h2>Our Process</h2>
+        <h2>Vår process</h2>
         <div className="grid grid-3" style={{marginTop: '24px'}}>
           <div>
-            <h4>1. File Upload &amp; Review</h4>
-            <p>Upload your 3D model files (.STL, .OBJ, .3MF, .STEP, .STP .AMF). Our team reviews for printability and optimizes if needed.</p>
+            <h4>1. Filuppladdning &amp; granskning</h4>
+            <p>Ladda upp dina 3D‑filer (.STL, .OBJ, .3MF, .STEP, .STP, .AMF). Vårt team granskar printbarheten och optimerar vid behov.</p>
           </div>
           <div>
-            <h4>2. Quote &amp; Materials</h4>
-            <p>Receive an instant quote and select from our range of materials and finishing options.</p>
+            <h4>2. Offert &amp; materialval</h4>
+            <p>Få en omedelbar offert och välj bland våra material- och efterbehandlingsalternativ.</p>
           </div>
           <div>
-            <h4>3. Production</h4>
-            <p>Your model enters our production queue and is printed using the optimal settings for your chosen material.</p>
+            <h4>3. Produktion</h4>
+            <p>Din modell läggs i produktionskön och skrivas ut med optimala inställningar för valt material.</p>
           </div>
           <div>
-            <h4>4. Quality Control</h4>
-            <p>Each print undergoes thorough quality inspection to ensure it meets our high standards.</p>
+            <h4>4. Kvalitetskontroll</h4>
+            <p>Varje utskrift genomgår noggrann kvalitetskontroll för att säkerställa att den uppfyller våra höga krav.</p>
           </div>
           <div>
-            <h4>5. Post-Processing</h4>
-            <p>Support removal, surface finishing, and any requested post-processing services are completed.</p>
+            <h4>5. Efterbehandling</h4>
+            <p>Avlägsnande av stöd, ytbehandling och andra önskade efterbehandlingar utförs.</p>
           </div>
           <div>
-            <h4>6. Shipping</h4>
-            <p>Your finished parts are carefully packaged and shipped via your preferred method.</p>
+            <h4>6. Leverans</h4>
+            <p>Dina färdiga delar packas omsorgsfullt och skickas med önskat leveranssätt.</p>
           </div>
         </div>
       </section>
 
       <section className="card">
-        <h2>Frequently Asked Questions</h2>
+        <h2>Vanliga frågor</h2>
         <div className="grid grid-2" style={{marginTop: '24px'}}>
           <div>
-            <h4>What file formats do you accept?</h4>
-            <p>We accept .STL, .OBJ, .3MF, .STEP, .STP .AMF, and most common 3D file formats. If you have a different format, contact us and we'll work with you.</p>
+            <h4>Vilka filformat accepterar ni?</h4>
+            <p>Vi accepterar .STL, .OBJ, .3MF, .STEP, .STP, .AMF och de vanligaste 3D‑filformaten. Har du ett annat format? Kontakta oss så löser vi det.</p>
           </div>
           <div>
-            <h4>What's your typical turnaround time?</h4>
-            <p>Most orders are completed within 2-5 business days, depending on complexity and quantity. Rush orders available upon request.</p>
+            <h4>Hur lång är ledtiden?</h4>
+            <p>De flesta beställningar färdigställs inom 2–5 arbetsdagar, beroende på komplexitet och antal. Expressleverans finns på förfrågan.</p>
           </div>
           <div>
-            <h4>Do you offer design services?</h4>
-            <p>Yes! Our team can help with 3D modeling, design optimization, and printability analysis for your projects.</p>
+            <h4>Erbjuder ni designhjälp?</h4>
+            <p>Ja! Vårt team hjälper gärna med 3D‑modellering, designoptimering och analys för printbarhet.</p>
           </div>
           <div>
-            <h4>What's the maximum print size?</h4>
-            <p>Our largest printer can handle objects up to 300mm x 300mm x 400mm. For larger objects, we can print in sections and assemble.</p>
+            <h4>Vad är maximal skrivstorlek?</h4>
+            <p>Vår största skrivare kan hantera föremål upp till 300 mm × 300 mm × 400 mm. För större objekt kan vi skriva i sektioner och montera ihop dem.</p>
           </div>
         </div>
       </section>

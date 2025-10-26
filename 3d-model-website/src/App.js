@@ -4,13 +4,29 @@ import InformationPage from './pages/InformationPage';
 import ExamplesPage from './pages/ExamplesPage';
 import HomePage from './pages/HomePage';
 
-// Simple Router implementation
+// Simple Router implementation with base path support
+const BASE_PATH = '/utskriftslabbet'; // Anpassa till din GitHub Pages-projektmapp
+
+function stripBasePath(path) {
+  if (path.startsWith(BASE_PATH)) {
+    const stripped = path.slice(BASE_PATH.length) || '/';
+    return stripped.startsWith('/') ? stripped : '/' + stripped;
+  }
+  return path;
+}
+
+function addBasePath(path) {
+  if (BASE_PATH === '' || path.startsWith(BASE_PATH)) return path;
+  if (path === '/') return BASE_PATH;
+  return BASE_PATH + path;
+}
+
 function Router({ children }) {
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const [currentPath, setCurrentPath] = useState(() => stripBasePath(window.location.pathname));
 
   useEffect(() => {
     const handlePopState = () => {
-      setCurrentPath(window.location.pathname);
+      setCurrentPath(stripBasePath(window.location.pathname));
     };
 
     window.addEventListener('popstate', handlePopState);
@@ -18,7 +34,7 @@ function Router({ children }) {
   }, []);
 
   const navigate = (path) => {
-    window.history.pushState({}, '', path);
+    window.history.pushState({}, '', addBasePath(path));
     setCurrentPath(path);
   };
 
@@ -30,17 +46,18 @@ function Route({ path, element, currentPath }) {
   return currentPath === path ? element : null;
 }
 
-// Link component
+
+// Link component (respects base path)
 function Link({ to, children, className, onClick }) {
   const handleClick = (e) => {
     e.preventDefault();
-    window.history.pushState({}, '', to);
+    window.history.pushState({}, '', addBasePath(to));
     window.dispatchEvent(new PopStateEvent('popstate'));
     if (onClick) onClick();
   };
 
   return (
-    <a href={to} onClick={handleClick} className={className}>
+    <a href={addBasePath(to)} onClick={handleClick} className={className}>
       {children}
     </a>
   );
@@ -77,7 +94,7 @@ function Header({ currentPath, navigate }) {
     <header className="header">
       <nav className="nav">
         <Link to="/" className="logo">
-          PrintARN
+          UtskriftsLabbet
         </Link>
         
         <ul className="nav-links">
@@ -127,7 +144,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="nav">
-        <p>&copy; 2025 printARN.</p>
+        <p>&copy; 2025 UtskriftsLabbet.</p>
       </div>
     </footer>
   );
