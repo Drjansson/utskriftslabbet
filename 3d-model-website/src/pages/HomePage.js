@@ -11,7 +11,7 @@ function HomePage() {
 
       <section className="card">
         <h2>Vår process</h2>
-        <div className="grid grid-3" style={{marginTop: '24px'}}>
+        <div className="grid grid-2" style={{marginTop: '24px'}}>
           <div>
             <h4>1. Kontakt &amp; Filuppladdning </h4>
             <p>Använd vårt kontakt formulär för att ta kontakt med oss och ladda upp dina 3D‑filer.</p>
@@ -74,8 +74,13 @@ function HomePage() {
             <p>Vår största skrivare kan hantera föremål upp till 256 mm × 256 mm × 256 mm. För större objekt kan vi skriva i sektioner och montera ihop dem.</p>
           </div>
           <div>
-            <h4>Vilket 3d-skrivare använder vi?</h4>
+            <h4>Vilket 3d-skrivare använder ni?</h4>
             <p>Vi använder skrivare ifrån Bambu Labs, modell A1.</p>
+          </div>
+          <div>
+            <h4>Hur levereras utskrifterna?</h4>
+            <p>Vi lämnar gärna över modellerna i eller runt Uppsala, efter överenskommelse.</p> 
+            <p>För leveranser längre bort, skickar vi modellerna med post.</p>
           </div>
         </div>
       </section>
