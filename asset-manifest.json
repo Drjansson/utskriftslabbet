@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/utskriftslabbet/static/css/main.afb0942c.css",
-    "main.js": "/utskriftslabbet/static/js/main.cc8180b1.js",
+    "main.js": "/utskriftslabbet/static/js/main.1559ddb3.js",
     "index.html": "/utskriftslabbet/index.html",
     "main.afb0942c.css.map": "/utskriftslabbet/static/css/main.afb0942c.css.map",
-    "main.cc8180b1.js.map": "/utskriftslabbet/static/js/main.cc8180b1.js.map"
+    "main.1559ddb3.js.map": "/utskriftslabbet/static/js/main.1559ddb3.js.map"
   },
   "entrypoints": [
     "static/css/main.afb0942c.css",
-    "static/js/main.cc8180b1.js"
+    "static/js/main.1559ddb3.js"
   ]
 }
