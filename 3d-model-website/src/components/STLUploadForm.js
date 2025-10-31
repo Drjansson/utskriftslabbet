@@ -9,16 +9,26 @@ function STLUploadForm({ filename }) {
 
     const [botTrap, setBotTrap] = React.useState(''); // honeypot field
 
-  const [fileBase64, setFileBase64] = React.useState('');
   const [exampleFilename, setExampleFile] = React.useState(filename || null);
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [message, setMessage] = React.useState('');
   const [material, setMaterial] = React.useState('PLA');
   const [color, setColor] = React.useState('BLACK');
+  const [uploadedFilename, setUploadedFilename] = React.useState('');
+  const [fileBase64, setFileBase64] = React.useState('');
   const [error, setError] = React.useState(null);
   const [success, setSuccess] = React.useState(null);
 
+
+  const transformFileToBase64 = (file) => {
+     const reader = new FileReader();
+        reader.onloadend = () => {
+          const base64String = reader.result.split(',')[1];
+          setFileBase64(base64String);
+        };
+        reader.readAsDataURL(file);
+  }
 
   const handleFileChange = (event) => {
     setSuccess(null);
@@ -26,12 +36,8 @@ function STLUploadForm({ filename }) {
     const file = event.target.files[0];
     if (!file) return;
 
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      const base64String = reader.result.split(',')[1];
-      setFileBase64(base64String);
-    };
-    reader.readAsDataURL(file);
+    setUploadedFilename(file.name);
+    transformFileToBase64(file);
   };
 
   const handleFile = () => {
@@ -44,12 +50,8 @@ function STLUploadForm({ filename }) {
         const response = await fetch(`/${exampleFilename}`);
         if (!response.ok) return;
         const blob = await response.blob();
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          const base64String = reader.result.split(',')[1];
-          setFileBase64(base64String);
-        };
-        reader.readAsDataURL(blob);
+       
+        transformFileToBase64(blob);
       } catch (err) {
         // Could not fetch file
         console.error('Could not fetch STL file:', err);
@@ -62,11 +64,14 @@ function STLUploadForm({ filename }) {
     event.preventDefault();
 
     // Om ingen fil är vald, visa bekräftelsedialog
-    if (!fileBase64 && !exampleFilename) {
+    if (!uploadedFilename && !exampleFilename) {
       const confirmSend = window.confirm(
         'Du har inte valt någon 3D-modell att ladda upp. Vill du skicka formuläret ändå?'
       );
-      if (!confirmSend) return;
+      if (!confirmSend) {
+        setError('Formuläret ej skickat.');
+        return;
+      } 
     }
 
     handleFile();
@@ -78,11 +83,11 @@ function STLUploadForm({ filename }) {
 
     const payload = {
       name: name,
-      //fileName: exampleFilename,
       email: email,
       description: message,
       material: material,
       color: color,
+      fileName: exampleFilename ?? uploadedFilename,
       stl_file: fileBase64,
     };
 
