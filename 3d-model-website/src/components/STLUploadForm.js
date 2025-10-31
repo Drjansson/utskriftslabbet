@@ -61,6 +61,14 @@ function STLUploadForm({ filename }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    // Om ingen fil är vald, visa bekräftelsedialog
+    if (!fileBase64 && !exampleFilename) {
+      const confirmSend = window.confirm(
+        'Du har inte valt någon 3D-modell att ladda upp. Vill du skicka formuläret ändå?'
+      );
+      if (!confirmSend) return;
+    }
+
     handleFile();
 
     if (botTrap) {
@@ -78,15 +86,13 @@ function STLUploadForm({ filename }) {
       stl_file: fileBase64,
     };
 
-
     // Submit to Supabase
     //  error response example:
     // {
     //   "code": 201,
     //   "message": "Created"
     // }
-    
-    
+
     const { error } = await supabase
       .from('models')
       .insert(payload)
@@ -101,7 +107,6 @@ function STLUploadForm({ filename }) {
       setFileBase64('');
       fileInputRef.current.value = '';
     }
-
   };
 
   return (
@@ -243,7 +248,7 @@ function STLUploadForm({ filename }) {
         </div>
       )}
 
-  <button type="submit" disabled={!fileBase64 && !exampleFilename}>Skicka</button>
+  <button type="submit" disabled={false}>Skicka</button>
     </form>
     </div>
 
