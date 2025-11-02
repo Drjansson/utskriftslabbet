@@ -1,7 +1,7 @@
 {
   "name": "utskriftslabbet",
   "version": "0.1.0",
-  "homepage": "https://drjansson.github.io/utskriftslabbet/",
+  "homepage": "https://utskriftslabbet.se/",
   "private": true,
   "dependencies": {
     "@supabase/supabase-js": "^2.75.1",
