@@ -4,7 +4,7 @@ import ExamplesPage from './pages/ExamplesPage';
 import HomePage from './pages/HomePage';
 
 // Simple Router implementation with base path support
-const BASE_PATH = '/utskriftslabbet'; // Anpassa till din GitHub Pages-projektmapp
+const BASE_PATH = '/'; // Anpassa till din GitHub Pages-projektmapp
 
 function stripBasePath(path) {
   if (path.startsWith(BASE_PATH)) {

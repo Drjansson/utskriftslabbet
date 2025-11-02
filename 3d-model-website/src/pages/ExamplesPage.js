@@ -6,13 +6,6 @@ import {StlViewer} from "react-stl-viewer";
 const url3 = "part1.stl"
 const url4 = "part1.stl"
 
-const style = {
-    top: 0,
-    left: 0,
-    width: '100vw',
-    height: '100vh',
-}
-
 // Examples page component
 function ExamplesPage() {
   const [modalOpen, setModalOpen] = useState(false);
