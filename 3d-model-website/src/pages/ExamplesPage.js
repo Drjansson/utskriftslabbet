@@ -3,8 +3,8 @@ import { Link } from '../App';
 
 import {StlViewer} from "react-stl-viewer";
 
-const url3 = "part1.stl"
-const url4 = "part1.stl"
+const url3 = "exampleModels/part1.stl"
+const url4 = "exampleModels/part1.stl"
 
 // Examples page component
 function ExamplesPage() {
