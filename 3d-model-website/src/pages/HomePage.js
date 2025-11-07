@@ -14,7 +14,7 @@ function HomePage() {
         <div className="grid grid-2" style={{marginTop: '24px'}}>
           <div>
             <h4>1. Kontakt &amp; Filuppladdning </h4>
-            <p>Använd vårt kontakt formulär för att ta kontakt med oss och ladda upp dina 3D‑filer.</p>
+            <p>Använd vårt kontaktformulär för att ta kontakt med oss och ladda upp dina 3D‑filer.</p>
           </div>
           <div>
             <h4>2. Granskning </h4>
