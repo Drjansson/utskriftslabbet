@@ -14,7 +14,7 @@ function ContactPage() {
       </section>
 
       <section className="grid grid-2">
-        <div className="card" style={{height: '100%', position: 'sticky', top: '20px'}}>
+        <div className="card" style={{height: '100%', top: '20px'}}>
           <STLUploadForm filename={filename} />
         </div>
 
