@@ -110,7 +110,9 @@ function STLUploadForm({ filename }) {
     } else {
       setSuccess('Form submitted successfully!');
       setFileBase64('');
-      fileInputRef.current.value = '';
+      if (uploadedFilename){
+        fileInputRef.current.value = '';
+      }
     }
   };
 
