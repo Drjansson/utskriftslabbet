@@ -3,19 +3,24 @@ import { Link } from '../App';
 
 import {StlViewer} from "react-stl-viewer";
 
-const url3 = "exampleModels/part1.stl"
-const url4 = "exampleModels/part1.stl"
-
 // Examples page component
 function ExamplesPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalUrl, setModalUrl] = useState(null);
 
+  const url1 = "exampleModels/horlursstall-75mm.stl"
+  const url2 = "exampleModels/filament_spool_holder_left.stl"
+  const url3 = "exampleModels/part1.stl"
+  const url4 = "exampleModels/part1.stl"
   const exampleBoxes = [
-    { title: 'Example 1', url: url3, name: 'Model Name 1', price: 'Price 1', filename: url3 },
-    { title: 'Example 2', url: url3, name: 'Model Name 2', price: 'Price 2', filename: url3 },
-    { title: 'Example 3', url: url4, name: 'Model Name 3', price: 'Price 3', filename: url4 },
-    { title: 'Example 4', url: url4, name: 'Model Name 4', price: 'Price 4', filename: url4 },
+    { title: 'Hörlursställ', url: url1, name: 'Hörlurshållare till Ikea Skådis', price: '80 kr', 
+      filename: 'horlursstall-75mm.stl', credit: 'MarcelBichon', creditUrl: 'https://makerworld.com/sv/models/157856-ikea-skadis-headphone-holder' },
+    { title: 'Filamenthållare', url: url2, name: 'Filamenthållare till Ikea Skådis', price: '100 kr', 
+      filename: 'filament_spool_holder_left.stl', credit: 'zoey', creditUrl: 'https://makerworld.com/sv/models/215953-filament-spool-holder-ikea-skadis' },
+    { title: 'Example 3', url: url3, name: 'Model Name 3', price: null, 
+      filename: url4, credit: 'utskriftslabbet', creditUrl: 'https://utskriftslabbet.se' },
+    { title: 'Example 4', url: url4, name: 'Model Name 4', price: null, 
+      filename: url4, credit: null, creditUrl: null },
   ];
 
   const openModal = (url) => {
@@ -49,9 +54,16 @@ function ExamplesPage() {
               <div style={{marginTop: 12, fontWeight: 500}}>
                 Namn: <span style={{color: '#2563eb'}}>{ex.name}</span>
               </div>
-              <div style={{marginTop: 4, fontWeight: 500}}>
-                Pris: <span style={{color: '#059669'}}>{ex.price}</span>
-              </div>
+              {ex.price && (
+                <div style={{marginTop: 4, fontWeight: 500}}>
+                  Pris: <span style={{color: '#059669'}}>{ex.price}</span>
+                </div>
+              )}
+              {ex.credit && ex.creditUrl && (
+                <div style={{marginTop: 2, fontSize: '0.85em', color: '#888'}}>
+                  Skapare: <a href={ex.creditUrl} target="_blank" rel="noopener noreferrer" style={{color: '#2563eb', textDecoration: 'underline'}}>{ex.credit}</a>
+                </div>
+              )}
               <Link
                 to={`/contact?filename=${encodeURIComponent(ex.filename)}`}
                 className="btn btn--primary"
