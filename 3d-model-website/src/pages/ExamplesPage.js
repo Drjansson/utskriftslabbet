@@ -10,17 +10,17 @@ function ExamplesPage() {
 
   const url1 = "exampleModels/horlursstall-75mm.stl"
   const url2 = "exampleModels/filament_spool_holder_left.stl"
-  const url3 = "exampleModels/part1.stl"
-  const url4 = "exampleModels/part1.stl"
+  const url3 = "exampleModels/monitor_ben.stl"
+  const url4 = "exampleModels/skydd_till_spottar.stl"
   const exampleBoxes = [
-    { title: 'Hörlursställ', url: url1, name: 'Hörlurshållare till Ikea Skådis', price: '80 kr', 
+    { title: 'Ben till hylla', url: url3, name: 'Monitor ben', price: '50 kr', 
+      filename: 'monitor_ben.stl', credit: 'utskriftslabbet', creditUrl: 'https://utskriftslabbet.se' },
+    { title: 'Skydd vid installation av spottar i isolering', url: url4, name: 'Skydd till lamp-spottar', price: '30 kr', 
+      filename: 'skydd_till_spottar.stl', credit: 'utskriftslabbet', creditUrl: 'https://utskriftslabbet.se' },
+    { title: 'Hörlursställ', url: url1, name: 'Hörlurshållare till Ikea Skådis', price: '25 kr', 
       filename: 'horlursstall-75mm.stl', credit: 'MarcelBichon', creditUrl: 'https://makerworld.com/sv/models/157856-ikea-skadis-headphone-holder' },
-    { title: 'Filamenthållare', url: url2, name: 'Filamenthållare till Ikea Skådis', price: '100 kr', 
-      filename: 'filament_spool_holder_left.stl', credit: 'zoey', creditUrl: 'https://makerworld.com/sv/models/215953-filament-spool-holder-ikea-skadis' },
-    { title: 'Example 3', url: url3, name: 'Model Name 3', price: null, 
-      filename: url4, credit: 'utskriftslabbet', creditUrl: 'https://utskriftslabbet.se' },
-    { title: 'Example 4', url: url4, name: 'Model Name 4', price: null, 
-      filename: url4, credit: null, creditUrl: null },
+    { title: 'Filamenthållare', url: url2, name: 'Filamenthållare till Ikea Skådis', price: '50 kr', 
+      filename: 'filament_spool_holder_left.stl', credit: 'zoey', creditUrl: 'https://makerworld.com/sv/models/215953-filament-spool-holder-ikea-skadis' }
   ];
 
   const openModal = (url) => {
@@ -54,7 +54,7 @@ function ExamplesPage() {
               <div style={{marginTop: 12, fontWeight: 500}}>
                 Namn: <span style={{color: '#2563eb'}}>{ex.name}</span>
               </div>
-              {ex.price && (
+              {(ex.price && false) && (
                 <div style={{marginTop: 4, fontWeight: 500}}>
                   Pris: <span style={{color: '#059669'}}>{ex.price}</span>
                 </div>
