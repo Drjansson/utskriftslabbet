@@ -3,22 +3,37 @@ import React from 'react';
 
 import supabase from '../SupaBaseClient';
 
-function STLUploadForm({ filename }) {
+function STLUploadForm({ filename, prefilledSignModel }) {
 
   const fileInputRef = React.useRef();
 
     const [botTrap, setBotTrap] = React.useState(''); // honeypot field
 
-  const [exampleFilename, setExampleFile] = React.useState(filename || null);
+  const [exampleFilename, setExampleFile] = React.useState(filename || prefilledSignModel?.filename || null);
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
-  const [message, setMessage] = React.useState('');
+  const [message, setMessage] = React.useState(prefilledSignModel?.message || '');
   const [material, setMaterial] = React.useState('PLA');
   const [color, setColor] = React.useState('BLACK');
-  const [uploadedFilename, setUploadedFilename] = React.useState('');
-  const [fileBase64, setFileBase64] = React.useState('');
+  const [uploadedFilename, setUploadedFilename] = React.useState(prefilledSignModel?.filename || '');
+  const [fileBase64, setFileBase64] = React.useState(prefilledSignModel?.base64 || '');
   const [error, setError] = React.useState(null);
   const [success, setSuccess] = React.useState(null);
+
+  React.useEffect(() => {
+    if (prefilledSignModel?.filename) {
+      setExampleFile(prefilledSignModel.filename);
+      setUploadedFilename(prefilledSignModel.filename);
+      setMessage(prefilledSignModel.message || '');
+      setFileBase64(prefilledSignModel.base64 || '');
+      return;
+    }
+
+    if (filename) {
+      setExampleFile(filename);
+      setUploadedFilename(filename);
+    }
+  }, [filename, prefilledSignModel]);
 
 
   const transformFileToBase64 = (file) => {

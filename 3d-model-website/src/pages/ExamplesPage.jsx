@@ -8,10 +8,10 @@ function ExamplesPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalUrl, setModalUrl] = useState(null);
 
-  const url1 = "exampleModels/horlursstall-75mm.stl"
-  const url2 = "exampleModels/filament_spool_holder_left.stl"
-  const url3 = "exampleModels/monitor_ben.stl"
-  const url4 = "exampleModels/skydd_till_spottar.stl"
+  const url1 = "resources/exampleModels/horlursstall-75mm.stl"
+  const url2 = "resources/exampleModels/filament_spool_holder_left.stl"
+  const url3 = "resources/exampleModels/monitor_ben.stl"
+  const url4 = "resources/exampleModels/skydd_till_spottar.stl"
   const exampleBoxes = [
     { title: 'Ben till hylla', url: url3, name: 'Monitor ben', price: '50 kr', 
       filename: 'monitor_ben.stl', credit: 'utskriftslabbet', creditUrl: 'https://utskriftslabbet.se' },

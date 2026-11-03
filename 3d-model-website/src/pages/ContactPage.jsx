@@ -1,7 +1,34 @@
+import { useEffect, useState } from 'react';
 import STLUploadForm from "../components/STLUploadForm";
 
 // Contact page component
 function ContactPage() {
+  const [prefilledSignModel, setPrefilledSignModel] = useState(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const source = params.get('source');
+    const message = params.get('message');
+    const storedRequest = sessionStorage.getItem('utskriftslabbet-sign-request');
+
+    if (source === 'sign-builder' && storedRequest) {
+      const parsed = JSON.parse(storedRequest);
+      setPrefilledSignModel({
+        filename: parsed.filename,
+        message: parsed.message || message || '',
+        base64: parsed.base64 || '',
+      });
+      return;
+    }
+
+    if (source === 'sign-builder' && message) {
+      setPrefilledSignModel({
+        filename: params.get('filename') || 'custom-sign.stl',
+        message,
+        base64: '',
+      });
+    }
+  }, []);
 
   const params = new URLSearchParams(window.location.search);
   const filename = params.get("filename");
@@ -13,9 +40,15 @@ function ContactPage() {
         <p>Redo att Skriva ut dina idéer? Kontakta oss idag!</p>
       </section>
 
+      {prefilledSignModel && (
+        <div className="card" style={{ marginBottom: '20px', padding: '16px 20px', borderLeft: '4px solid var(--color-primary)' }}>
+          <strong>Skyltmodellen är förifylld i formuläret.</strong>
+        </div>
+      )}
+
       <section className="grid grid-2">
         <div className="card" style={{height: '100%', top: '20px'}}>
-          <STLUploadForm filename={filename} />
+          <STLUploadForm filename={filename} prefilledSignModel={prefilledSignModel} />
         </div>
 
         <div className="card" style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
